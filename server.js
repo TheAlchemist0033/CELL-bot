@@ -1,10 +1,9 @@
 const {
     SSL_OP_SSLEAY_080_CLIENT_DH_BUG
 } = require("constants");
-const Discord = require("discord.js");
-const client = new Discord.Client({
-    disableEveryone: true
-});
+const Discord= require('discord.js');
+const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES","GUILD_MESSAGE_REACTIONS","GUILD_MEMBERS","GUILDS","GUILD_BANS","GUILD_INVITES","GUILD_VOICE_STATES"],});
+
 const fs = require("fs");
 client.musicmap = new Map();
 client.mongoose = require("mongoose");
@@ -291,4 +290,4 @@ client.on("MessageUpdate", async message => {
     await cmd.execute(client, message, args, Discord);
 });
 client.on('error', console.error);
-client.login("private");
+client.login("secret");
