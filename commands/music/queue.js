@@ -1,6 +1,6 @@
 module.exports = {
     name: 'queue',
-    description: 'Music portion of the bot.',
+    description: 'Whats in my future, I wonder.',
     async execute(client, message, args) {
         let fetched = client.musicmap.get(message.guild.id);
         if(!fetched) return message.channel.send("No music is playing here.");
